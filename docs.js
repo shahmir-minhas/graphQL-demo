@@ -39,8 +39,10 @@
 //   user[input: UserInput]: User
 // }
 
-//====================== How to run a query 
+//====================== How to run Server
+// install graphQl and apollo server
 
+// const { ApolloServer, gql } = require('apollo-server');
   
 
 
