@@ -8,7 +8,7 @@
 //   isMarried: Boolean //not putting ! means it could b null
 //   friends:[User!]
 //   videosPosted:[Videos!]
-  
+
 // }
 
 // these are called scalers
@@ -43,8 +43,15 @@
 // install graphQl and apollo server
 
 // const { ApolloServer, gql } = require('apollo-server');
-  
 
 
+// Scalar types Int, Strings, Boolean, Float
+// const typeDefs = gql`
+// type Query{
+//   hellow: String
+// }
+// `
 
+//====================== Data for producsts Resources
 
+// https://github.com/harblaith7/GraphQL-Course-Udemy/blob/f4bff4eab1a1a0f03db1a98207f9cba0194e8a3f/01-ECommerce-App/initial_data#L1-L84

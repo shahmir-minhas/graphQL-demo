@@ -4,5 +4,24 @@
     "express": "^4.17.2",
     "graphql": "^16.3.0",
     "nodemon": "^2.0.15"
-  }
+  },
+  "name": "graphql-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shahmir-minhas/graphQL-demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shahmir-minhas/graphQL-demo/issues"
+  },
+  "homepage": "https://github.com/shahmir-minhas/graphQL-demo#readme",
+  "description": ""
 }

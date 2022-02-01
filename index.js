@@ -1,17 +1,37 @@
 const { ApolloServer, gql } = require('apollo-server');
+const products = require('./products');
 
-// Query
+// Query or scaler type or object tyoe we can return
 const typeDefs = gql`
 type Query{
-  hellow: String
+  hello: [String]
+  products : [Product!]!
+
+}
+type Product {
+  name: String!
+  description: String!
+  quantity: Int!
+  price: Float!
+  onSale: Boolean!
 }
 `
 // Query Resolvers
 const resolvers = {
   Query:{
-    hellow:()=>{
-      return "Hwllow World";
+    hello:()=>{
+      return ["Hwllow World", "Shahmir", 23];
+    }, 
+    products: ()=>{
+      return [
+      {  name: "Bike",
+        description:"Honda 125",
+        quantity: 12,
+        price: 12000,
+        onSale: false} 
+      ]
     }
+
   }
 }
 
