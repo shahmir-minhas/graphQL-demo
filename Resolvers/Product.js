@@ -1,6 +1,10 @@
-const { categories } = require('../db/category');
+// const { categories } = require('../db/category');
 
 exports.Product = {
     category:(parent, args, context)=>{
-     return categories.filter(category => category.id === parent.categoryId);
+     return context.categories.filter(category => category.id === parent.categoryId);
+    },
+    reviews:({id}, args, {reviews})=>{
+      // console.log('product',reviews)
+return reviews.filter(reviews=> id === reviews.productId);
     }};

@@ -1,7 +1,11 @@
-const { products } = require('../db/products');
+// const { products } = require('../db/products');
   exports.Category= {
-    products:(parent, args, context)=>{
-     return products.filter(products => products.categoryId === parent.id);
+    products:({id}, args, {products})=>{
+      
+     return products.filter(products => products.categoryId === id);
       
     }
   };
+
+
+  //destructured and refactored

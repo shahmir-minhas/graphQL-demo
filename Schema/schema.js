@@ -7,6 +7,17 @@ type Query{
   product(id: ID!):Product 
   categories: [Category!]!
   category(id: ID!): Category
+ reviews:[Review!]!
+}
+
+type Review{
+  id: ID!
+  date: String!
+  title: String!
+  comment: String!
+  rating:Int!
+  productId:ID!
+  product: Product!
 
 }
 
@@ -19,6 +30,7 @@ type Product {
   onSale: Boolean!
   image:String!
   category:[Category!]!
+  reviews: [Review]!
 }
 
 type Category {
