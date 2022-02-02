@@ -10,6 +10,12 @@ type Query{
  reviews:[Review!]!
 }
 
+type Mutation {
+  addCategory(input: addCategoryInputs!) : Category!
+  addProduct(input: addProductInputs!): Product!
+  addReview(input: addReview!): Review!
+}
+
 type Review{
   id: ID!
   date: String!
@@ -42,6 +48,26 @@ type Category {
 input onSaleFilter{
   onSale: Boolean
   avgRating: Int
+}
+input addCategoryInputs{
+  name:String!
+}
+input addProductInputs{
+  name: String!
+  description: String!
+  quantity: Int!
+  price: Float!
+  onSale: Boolean!
+  image:String!
+  categoryId: String!
+  
+}
+input addReview{
+  date: String!
+  title: String!
+  comment: String!
+  rating:Int!
+  productId:ID!
 }
 
 `

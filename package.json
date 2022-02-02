@@ -3,12 +3,12 @@
     "apollo-server": "^3.6.2",
     "express": "^4.17.2",
     "graphql": "^16.3.0",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "uuid": "^8.3.2"
   },
   "name": "graphql-app",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index"

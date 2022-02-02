@@ -26,7 +26,7 @@ exports.Query = {
           return avgProductRating >= avgRating; //then return product if it satify the filter condition
 
         });
-        return filteredProducts;
+        return filteredProducts; //returns all filtured products
       }
     }
     return products;
@@ -37,8 +37,8 @@ exports.Query = {
     if (!product) return null
     else return product;
   },
-  categories: () => {
-    return context.categories;
+  categories: (parent, args, {categories}) => {
+    return categories;
   },
   category: (parent, args, context) => {
     return context.categories.find(category => category.id === args.id);

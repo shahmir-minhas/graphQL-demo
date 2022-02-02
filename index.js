@@ -5,6 +5,7 @@ const { products } = require('./db/products');
 const { categories } = require('./db/category');
 const { reviews } = require('./db/reviews');
 const {Query} = require("./Resolvers/Query");
+const {Mutation} = require("./Resolvers/Mutation");
 const {Product} = require("./Resolvers/Product");
 const {Category} = require("./Resolvers/Category");
 const {Review} = require("./Resolvers/Review");
@@ -13,10 +14,11 @@ const {Review} = require("./Resolvers/Review");
 
 
 
+
 // Passing Query and Resolver to ApolloServer
 const server = new ApolloServer({
   typeDefs,
-  resolvers: {Query, Product, Category, Review},
+  resolvers: {Query, Product, Category, Review, Mutation},
   context:{
     // sayHellow: ()=>{
     //   console.log('ehllow');
