@@ -3,6 +3,9 @@ const {typeDefs} = require("./Schema/schema");
 const {resolvers} = require("./Resolvers/resolvers");
 const { products } = require('./db/products');
 const { categories } = require('./db/category');
+const {Query} = require("./Resolvers/Query");
+const {Product} = require("./Resolvers/Product");
+const {Category} = require("./Resolvers/Category");
 
 
 
@@ -10,7 +13,7 @@ const { categories } = require('./db/category');
 // Passing Query and Resolver to ApolloServer
 const server = new ApolloServer({
   typeDefs,
-  resolvers
+  resolvers: {Query, Product, Category},
 });
 
 
