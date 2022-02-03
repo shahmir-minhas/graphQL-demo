@@ -14,9 +14,14 @@ type Mutation {
   addCategory(input: addCategoryInputs!) : Category!
   addProduct(input: addProductInputs!): Product!
   addReview(input: addReview!): Review!
+
   deleteCategory(id:ID!):Boolean!
   deleteProduct(id:ID!):Boolean!
   deleteReview(id:ID!):Boolean!
+
+  updateCategory(id:ID!, input: updateCategoryInput): Category!
+  updateProduct(id:ID!, input: updateProductInput): Product!
+  updateReview(id:ID!, input: updateReviewInput): Review! 
 }
 
 type Review{
@@ -55,6 +60,9 @@ input onSaleFilter{
 input addCategoryInputs{
   name:String!
 }
+input updateCategoryInput{
+  name:String!
+}
 input addProductInputs{
   name: String!
   description: String!
@@ -65,7 +73,25 @@ input addProductInputs{
   categoryId: String!
   
 }
+input updateProductInput{
+  name: String!
+  description: String!
+  quantity: Int!
+  price: Float!
+  onSale: Boolean!
+  image:String!
+  categoryId: String
+  
+}
 input addReview{
+  date: String!
+  title: String!
+  comment: String!
+  rating:Int!
+  productId:ID!
+}
+
+input updateReviewInput{
   date: String!
   title: String!
   comment: String!
