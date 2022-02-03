@@ -1,10 +1,11 @@
 const { ApolloServer } = require('apollo-server');
 const {typeDefs} = require("./Schema/schema");
 const {resolvers} = require("./Resolvers/resolvers");
-const { products } = require('./db/products');
-const { categories } = require('./db/category');
-const { reviews } = require('./db/reviews');
+// const { products } = require('./db/products');
+// const { categories } = require('./db/category');
+// const { reviews } = require('./db/reviews');
 const {Query} = require("./Resolvers/Query");
+const {db} = require('./db/db')
 const {Mutation} = require("./Resolvers/Mutation");
 const {Product} = require("./Resolvers/Product");
 const {Category} = require("./Resolvers/Category");
@@ -23,9 +24,12 @@ const server = new ApolloServer({
     // sayHellow: ()=>{
     //   console.log('ehllow');
     // },
-    products:products,
-    categories: categories,
-    reviews:reviews,
+    
+    // products:products,
+    // categories: categories,
+    // reviews:reviews,
+
+    db,
   }
 });
 

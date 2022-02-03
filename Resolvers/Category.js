@@ -1,22 +1,20 @@
 // const { products } = require('../db/products');
   exports.Category= {
-    products:({id}, {filter}, {products, reviews})=>{
+    products:({id}, {filter}, {db})=>{
       
       
-     let categoryProducts = products.filter(products => products.categoryId === id);
+     let categoryProducts = db.products.filter(products => products.categoryId === id);
 
      if (filter) {
        const {onSale, avgRating} = filter;
       if (onSale) {
-        categoryProducts =  categoryProducts.filter(products => products.onSale);
+        categoryProducts = categoryProducts.filter(products => products.onSale);
       }
-      if([1,2,3,4,5].includes(avgRating)){
-        console.log('avgRating',avgRating)
-        
-        let filteredProducts = products.filter(product =>{
+      if([1,2,3,4,5].includes(avgRating)){        
+        let filteredProducts = db.products.filter(product =>{
           let sumOfRatings = 0;
           let totalReviews = 0;
-          reviews.forEach(review=>{
+          db.reviews.forEach(review=>{
             if(review.productId === product.id){
               sunOfRatings =+ review.rating;
               totalReviews++;

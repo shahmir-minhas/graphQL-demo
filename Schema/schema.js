@@ -14,6 +14,9 @@ type Mutation {
   addCategory(input: addCategoryInputs!) : Category!
   addProduct(input: addProductInputs!): Product!
   addReview(input: addReview!): Review!
+  deleteCategory(id:ID!):Boolean!
+  deleteProduct(id:ID!):Boolean!
+  deleteReview(id:ID!):Boolean!
 }
 
 type Review{

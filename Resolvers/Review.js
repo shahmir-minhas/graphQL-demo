@@ -1,7 +1,7 @@
 exports.Review={
-  product:(parent, args, {products})=>{
+  product:(parent, args, {db})=>{
     console.log('reviwes resolver',parent);
-    return products.find(products => products.id === parent.productId);
+    return db.products.find(products => products.id === parent.productId);
   }
 };
 
